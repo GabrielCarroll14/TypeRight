@@ -17,6 +17,8 @@ def save_text():
     with open ("text.txt", "w") as f:
         f.write (text.get())
 
+root.title("TypeRight")
+
 # create the save text button
 save_text_button = CTkButton(root, text= "Save", command = save_text,)
 save_text_button.pack(pady=5, padx=5)
