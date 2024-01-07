@@ -29,4 +29,3 @@ text_box = CTkEntry(root, width=400, height=420, textvariable = text)
 text_box.pack (padx=10, pady=10)
 
 root.mainloop()
-
