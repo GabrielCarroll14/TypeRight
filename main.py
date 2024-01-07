@@ -20,7 +20,7 @@ def save_text():
 root.title("TypeRight")
 
 # create the save text button
-save_text_button = CTkButton(root, text= "Save", command = save_text,)
+save_text_button = CTkButton(root, text= "Save the text as text.txt", command = save_text,)
 save_text_button.pack(pady=5, padx=5)
 
 # Create the textbox
