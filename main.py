@@ -24,7 +24,11 @@ file_name = CTkEntry(root, width=400, height=40, textvariable=name)
 file_name.pack(padx=10, pady=10)
 
 # create the save text button
+<<<<<<< HEAD
 save_text_button = CTkButton(root, text=f"Save the text as {name.get()}.", command=save_text)
+=======
+save_text_button = CTkButton(root, text= "Save", command = save_text,)
+>>>>>>> parent of 0f00207 (Update main.py)
 save_text_button.pack(pady=5, padx=5)
 
 # Create the textbox
