@@ -7,6 +7,7 @@ from tkinter import *
 # Create the window
 root = customtkinter.CTk()
 root.geometry("400x400")
+root.title("TypeRight")
 
 # Set the appearance
 customtkinter.set_appearance_mode("light")
