@@ -17,11 +17,23 @@ def save_text():
             f.write(text.get())
         save_text_button.config(text=f"Save the text as {filename}.")
 
+<<<<<<< HEAD
 root.title("TypeRight")
 
 name = tk.StringVar()
 file_name = CTkEntry(root, width=400, height=40, textvariable=name)
 file_name.pack(padx=10, pady=10)
+=======
+def open_file():
+    file_path = filedialog.askopenfilename(filetypes=[("Text files", "*.txt"), ("All files", "*.*")])
+    if file_path:
+        with open(file_path, "r") as f:
+            content = f.read()
+            text.set(content)
+
+open_text_button = CTkButton(root, text="Open", command=open_file)
+open_text_button.pack(pady=5, padx=5)
+>>>>>>> parent of 251c252 (Update main.py)
 
 # create the save text button
 save_text_button = CTkButton(root, text=f"Save the text as {name.get()}.", command=save_text)
