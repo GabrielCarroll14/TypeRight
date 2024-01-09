@@ -31,4 +31,3 @@ text_box.pack (padx=10, pady=10)
 
 # Create the mainloop to keep the app running
 root.mainloop()
-
