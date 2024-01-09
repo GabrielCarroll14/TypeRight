@@ -21,6 +21,16 @@ def save_text():
         with open(file_path, "w") as f:
             f.write(text.get())
 
+def open_file():
+    file_path = filedialog.askopenfilename(filetypes=[("Text files", "*.txt"), ("All files", "*.*")])
+    if file_path:
+        with open(file_path, "r") as f:
+            content = f.read()
+            text.set(content)
+
+open_text_button = CTkButton(root, text="Open", command=open_file)
+open_text_button.pack(pady=5, padx=5)
+
 # create the save text button
 save_text_button = CTkButton(root, text= "Save", command = save_text,)
 save_text_button.pack(pady=5, padx=5)
