@@ -15,11 +15,13 @@ customtkinter.set_default_color_theme("blue")
 
 # Create the save function
 def save_text():
-    with open ("text.txt", "w") as f:
-        f.write (text.get())
+    file_path = filedialog.asksaveasfilename(defaultextension=".txt", filetypes=[("Text files", "*.txt"), ("All files", "*.*")])
+    if file_path:
+        with open(file_path, "w") as f:
+            f.write(text.get())
 
 # create the save text button
-save_text_button = CTkButton(root, text= "Save the text as text.txt", command = save_text,)
+save_text_button = CTkButton(root, text= "Save", command = save_text,)
 save_text_button.pack(pady=5, padx=5)
 
 # Create the textbox
