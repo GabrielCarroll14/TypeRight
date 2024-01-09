@@ -1,46 +1,35 @@
-# Import all things
 import tkinter as tk
-import customtkinter
-from customtkinter import *
-from tkinter import *
+from customtkinter import CTk, CTkButton, CTkEntry, set_appearance_mode, set_default_color_theme
 
 # Create the window
-root = customtkinter.CTk()
+root = CTk()
 root.geometry("400x400")
-root.title("TypeRight")
-root.iconbitmap("icon.ico")
 
 # Set the appearance
-customtkinter.set_appearance_mode("system")
-customtkinter.set_default_color_theme("blue")
+set_appearance_mode("light")
+set_default_color_theme("blue")
 
 # Create the save function
 def save_text():
-    file_path = filedialog.asksaveasfilename(defaultextension=".txt", filetypes=[("Text files", "*.txt"), ("All files", "*.*")])
-    if file_path:
-        with open(file_path, "w") as f:
+    filename = name.get()
+    if filename:
+        with open(f"{filename}.txt", "w") as f:
             f.write(text.get())
+        save_text_button.config(text=f"Save the text as {filename}.")
 
-# Create the open file function
-def open_file():
-    file_path = filedialog.askopenfilename(filetypes=[("Text files", "*.txt"), ("All files", "*.*")])
-    if file_path:
-        with open(file_path, "r") as f:
-            content = f.read()
-            text.set(content)
+root.title("TypeRight")
 
-# Create the open file button
-open_text_button = CTkButton(root, text="Open", command=open_file)
-open_text_button.pack(pady=5, padx=5)
+name = tk.StringVar()
+file_name = CTkEntry(root, width=400, height=40, textvariable=name)
+file_name.pack(padx=10, pady=10)
 
 # create the save text button
-save_text_button = CTkButton(root, text= "Save", command = save_text,)
+save_text_button = CTkButton(root, text=f"Save the text as {name.get()}.", command=save_text)
 save_text_button.pack(pady=5, padx=5)
 
 # Create the textbox
 text = tk.StringVar()
-text_box = CTkEntry(root, width=400, height=420, textvariable = text)
-text_box.pack (padx=10, pady=10)
+text_box = CTkEntry(root, width=400, height=420, textvariable=text)
+text_box.pack(padx=10, pady=10)
 
-# Create the mainloop to keep the app running
 root.mainloop()
