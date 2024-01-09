@@ -8,6 +8,7 @@ from tkinter import *
 root = customtkinter.CTk()
 root.geometry("400x400")
 root.title("TypeRight")
+root.iconbitmap("icon.ico")
 
 # Set the appearance
 customtkinter.set_appearance_mode("system")
