@@ -10,7 +10,7 @@ root.geometry("400x400")
 root.title("TypeRight")
 
 # Set the appearance
-customtkinter.set_appearance_mode("light")
+customtkinter.set_appearance_mode("system")
 customtkinter.set_default_color_theme("blue")
 
 # Create the save function
